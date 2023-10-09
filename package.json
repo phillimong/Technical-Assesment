@@ -1,0 +1,25 @@
+{
+  "name": "technical-assesment",
+  "version": "1.0.0",
+  "description": "Technical Assesment for Tripitace",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run start:dev --prefix auth-assesment-api",
+    "client-one": "npm run dev --prefix frontend1",
+    "client-two": "npm run dev --prefix frontend2",
+    "conc": "concurrently \"npm run server\" \"npm run client-one\" \"npm run client-two\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phillimong/Technical-Assesment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phillimong/Technical-Assesment/issues"
+  },
+  "homepage": "https://github.com/phillimong/Technical-Assesment#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
