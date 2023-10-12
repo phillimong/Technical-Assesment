@@ -26,7 +26,7 @@ const RegisterScreen = () => {
   }, [navigate, userInfo]);
 
   const submitHandler = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
@@ -34,7 +34,7 @@ const RegisterScreen = () => {
       try {
         const res = await register({ username, password }).unwrap();
         dispatch(setCredentials({ ...res }));
-        navigate("/login");
+        window.location.replace("http://localhost:3001/login");
       } catch (err) {
         toast.error(err?.data?.message || err.error);
       }
