@@ -9,9 +9,8 @@ export class AuthController {
   @Post('auth/login')
   async login(@Request() req, @Res({ passthrough: true }) res) {
     res.cookie('user_token', this.authService.login(req.user), {
-      httpOnly: false,
+      httpOnly: true,
       secure: false,
-      sameSite: 'none',
       domain: 'localhost',
       expires: new Date(Date.now() + 36000),
     });
@@ -20,9 +19,8 @@ export class AuthController {
   @Get('auth/logout')
   async logout(@Res({ passthrough: true }) res) {
     res.cookie('user_token', '', {
-      httpOnly: false,
+      httpOnly: true,
       secure: false,
-      sameSite: 'none',
       domain: 'localhost',
       expires: new Date(Date.now()),
     });
